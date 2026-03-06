@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZ</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <img src="bola.webp" alt="">
+        <h1>QUIZ DE FUTEBOL</h1>
+        <div id="cronometro">
+            <h3>Tempo: <span id="contador">00</span></h3>
+        </div>
+
+        <div id="pontosGanhos">
+            <h3>Pontos: <span id="pontos">0</span></h3>
+        </div>
+    </header>
+
+    <main>
+        <div class="pai">
+            <div class="pergunta">
+                <h2>Qual seleção eliminou o Brasil na Copa do Mundo de 2006?</h2>
+            </div>
+
+            <div class="respostas">
+                <div class="form">
+                    <div class="alternativas" id="resposta1" onclick="verificarResposta(1)">
+                        <label for="1">França</label>
+                    </div>
+                    <div class="alternativas" id="resposta2" onclick="verificarResposta(2)">
+                        <label for="2">Holanda</label>
+                    </div>
+                    <div class="alternativas" id="resposta3" onclick="verificarResposta(3)">
+
+                        <label for="3">Portugal</label>
+                    </div>
+                    <div class="alternativas" id="resposta4" onclick="verificarResposta(4)">
+
+                        <label for="4">Alemanha</label>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <footer>
+
+            </footer>
+        </div>
+    </main>
+    <script>
+        const resposta1 = document.getElementById("resposta1")
+        const resposta2 = document.getElementById("resposta2")
+        const resposta3 = document.getElementById("resposta3")
+        const resposta4 = document.getElementById("resposta4")
+        const botao = document.getElementById("botaoProxima")
+        var pontos = sessionStorage.getItem("pontos");
+
+
+        document.getElementById("pontos").innerText = pontos;
+
+        var tempo = 0
+
+        setInterval(() => {
+            tempo++
+            document.getElementById("contador").innerText = tempo
+        }, 1000)
+
+        setInterval(() => {
+            alert("Tempo Esgotado");
+            window.location.href = "pergunta3.html";
+        }, 16000);
+
+
+        function verificarResposta(numero) {
+            if (numero == 3) {
+                resposta3.style.backgroundColor = "red";
+                resposta3.style.scale = 1.1;
+                alert("Resposta Errada");
+                setTimeout(() => {
+                    window.location.href = "pergunta3.html";
+                }, 1000);
+            } if (numero == 2) {
+                resposta2.style.backgroundColor = "red";
+                resposta2.style.scale = 1.02;
+                alert("Resposta Errada");
+                setTimeout(() => {
+                    window.location.href = "pergunta3.html";
+                }, 1000);
+            } if (numero == 1) {
+                pontos++;
+                resposta1.style.backgroundColor = "green";
+                resposta1.style.scale = 1.02;
+                alert("Resposta Certa");
+                setTimeout(() => {
+                    window.location.href = "pergunta3.html";
+                }, 1000);
+            }
+            if (numero == 4) {
+                resposta4.style.backgroundColor = "red";
+                resposta4.style.scale = 1.02;
+                alert("Resposta Errada");
+                setTimeout(() => {
+                    window.location.href = "pergunta3.html";
+                }, 1000);
+            }
+
+            if (resposta1.style.backgroundColor == "red" || resposta1.style.backgroundColor == "green") {
+                resposta1.style.transform = "none";
+            }
+
+            if (resposta2.style.backgroundColor == "red" || resposta2.style.backgroundColor == "green") {
+                resposta2.style.transform = "none";
+            }
+
+            if (resposta3.style.backgroundColor == "red" || resposta3.style.backgroundColor == "green") {
+                resposta3.style.transform = "none";
+            }
+
+            if (resposta4.style.backgroundColor == "red" || resposta4.style.backgroundColor == "green") {
+                resposta4.style.transform = "none";
+            }
+
+            sessionStorage.setItem("pontos", pontos);
+        }
+    </script>
+</body>
+
+</html>

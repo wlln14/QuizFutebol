@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+    transition: 0.3s ease;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    background-color: #fff;
+    color: #121212;
+}
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    gap: 20px;
+}
+
+header img {
+    width: 100px;
+    max-width: 30%;
+}
+
+
+main {
+    background: linear-gradient(to bottom, #fff, #141414);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+.pai {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 7px;
+    padding: 20px;
+    width: 100%;
+    max-width: 700px; 
+}
+
+
+.pergunta {
+    box-shadow: 2px 1px 4px #12121281;
+    padding: 20px;
+    font-size: clamp(18px, 4vw, 25px);
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+
+.respostas {
+    box-shadow: 2px 1px 4px #12121281;
+    margin-top: 30px;
+    width: 100%;
+    padding: 20px 10px;
+    border-radius: 8px;
+    background-color: #d6cece49;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form div {
+    width: 100%;
+    box-shadow: 0px 4px 3px #12121281;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: clamp(16px, 4vw, 22px);
+}
+
+.form div:hover {
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+a {
+    opacity: 0;
+}
+
+button {
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #ffffff91;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 200px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+#pontosGanhos {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 30px;
+    color: rgba(0,0,0,0.7);
+    border: solid 2px rgba(0,0,0,0.7);
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+
+#cronometro {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 50px;
+    color: green;
+    border: solid 2px rgba(0,0,0,0.7);
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+
+@media (max-width: 480px) {
+    header img {
+        width: 80px;
+    }
+
+    .pai {
+        padding: 10px;
+    }
+
+    .respostas {
+        padding: 15px 8px;
+    }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    #botaoProxima {
+        opacity: 1;
+    }
+
+    button:hover {
+        background-color: black;
+        color: #fff;
+    }
+
+    .pergunta {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+</style>
+
+<body>
+
+    <header>
+        <img src="bola.webp" alt="">
+        <h1>QUIZ DE FUTEBOL</h1>
+    </header>
+
+    <main>
+        <div class="pai">
+           
+
+            <div class="pergunta">
+                <h1>FIM DO QUIZ</h1>
+                <h2>Obrigado por jogar!</h2>
+                <h3>Pontos: <span id="pontos">0</span></h3>
+            </div>
+
+            
+            <a href="start.html" id="botaoProxima">
+            <button >Voltar</button>
+            </a>
+
+            <footer>
+
+            </footer>
+        </div>
+    </main>
+
+    <script>
+        var pontos = sessionStorage.getItem("pontos")
+        document.getElementById("pontos").innerText = pontos;
+
+        sessionStorage.clear();
+
+
+    </script>
+
+
+</body>
+
+</html>
